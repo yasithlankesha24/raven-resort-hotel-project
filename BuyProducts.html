@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Buy Products</title>
+	<link rel="stylesheet" href ="BuyProducts_style.css" >
+	<script>
+		
+		function validateForm(myFormRef){
+			let fname = myFormRef.firstname.value;
+			let lname = myFormRef.lastname.value;
+			let email = myFormRef.email.value;
+			let contactnumber = myFormRef.contactnum.value;
+			let totalbill = myFormRef.total.value;
+			let tquan = myFormRef.tquantity.value;
+			let mquan = myFormRef.mquantity.value;
+			let bquan = myFormRef.bquantity.value;
+			let nquan = myFormRef.nquantity.value;
+			
+			
+			if(fname==""){
+				alert("First Name is not entered !");
+			}
+			if(lname==""){
+				alert("Last Name is not entered !");
+			}
+			if(email==""){
+				alert("E-mail is not entered !");
+			}
+			if(contactnumber==""){
+				alert("Contact Number is not entered !");
+			}
+			if(contactnumber.length != 10){
+				alert("you haven't entered a 10 digit phone number");
+			}
+			
+			alert("First Name : " + fname +"\nLast Name : " + lname + "\nE-mail : " + email + "\nContact Number : " + contactnumber + "\nInvoice Details\n--------------------------\n" + "Product = TOWEL\nPrice = $30.50\nQuantity = " + tquan +"\n\nProduct = MUG\nPrice = $5.50\nQuantity = " + mquan+ "\n\nProduct = BATHROBE\nPrice = $75.50\nQuantity = " + bquan + "\n\nProduct = MONUMENT\nPrice = $25.50\nQuantity = " + nquan + "\n\nTotal Bill : " + totalbill);
+
+			while(document.getElementById("towel").checked){
+				if (tquan == 0){
+					alert("towel is selected but towel quantity not changed");
+					break;
+				}
+			}
+			while(document.getElementById("mug").checked){
+				if (mquan == 0){
+					alert("mug is selected but mug quantity not changed");
+					break;
+				}
+			}
+			while(document.getElementById("bathrobe").checked){
+				if (bquan == 0){
+					alert("bathrobe is selected but bathrobe quantity not changed");
+					break;
+				}
+			}	
+			while(document.getElementById("monument").checked){
+				if (nquan == 0){
+					alert("monument is selected but monument quantity not changed");
+					break;
+				}
+			}	
+		}	
+
+		document.getElementById("btntowel").addEventlistener("click",totalIt);
+		document.getElementById("btnmug").addEventlistener("click",totalIt);
+		document.getElementById("btnbathrobe").addEventlistener("click",totalIt);
+		document.getElementById("btnmonument").addEventlistener("click",totalIt);
+
+		function totalIt() {
+  			var total = 0;
+  			var towel = document.getElementById("towel");
+  			var mug = document.getElementById("mug");
+  			var bathrobe = document.getElementById("bathrobe");
+  			var monument = document.getElementById("monument");
+  			var tinput = document.getElementById("tquantity");
+  			var minput = document.getElementById("mquantity");
+  			var binput = document.getElementById("bquantity");
+  			var ninput = document.getElementById("nquantity");
+  			var towelnew;
+  			var mugnew;
+  			var bathrobenew;
+  			var monumentnew;
+    		if(towel.checked){
+    			towelnew = parseFloat(towel.value) * parseFloat(tinput.value);
+    			total += towelnew;
+    		}
+    		if(mug.checked){
+    			mugnew= parseFloat(mug.value) * parseFloat(minput.value);
+    			total += mugnew;
+    		}
+    		if(bathrobe.checked){
+    			bathrobenew = parseFloat(bathrobe.value) * parseFloat(binput.value);
+    			total += bathrobenew;
+    		}
+    		if(monument.checked){
+    			monumentnew= parseFloat(monument.value) * parseFloat(ninput.value);
+    			total += monumentnew;
+    		} 	
+    		 			
+  			document.getElementById("total").value = "$" + total.toFixed(2);
+		}
+		
+	</script>
+</head>
+<body>
+        <div class="nav-container">
+			<div class="wrapper">
+				<nav>
+					<div class="logo">
+						<a href="index.html">
+						<img src="Images/logo.svg" alt="Resort Logo">
+						</a>
+					</div>
+	
+					<ul class="nav-items">
+						<li>
+							<a href="index.html">Home</a>
+						</li>
+	
+						<li>
+							<a href="Form.html">Form</a>
+						</li>
+	
+						<li>
+							<a href="BuyProducts.html">Buy Products</a>
+						</li>
+	
+						<li>
+							<a href="Quiz.html">Quiz</a>
+						</li>
+	
+						<li>
+							<a href="gallery.html">Gallery</a>
+						</li>
+	
+						<li>
+							<a href="studentdetails.html">Student Details</a>
+						</li>
+	
+						<li>
+							<a href="svg.html">Site Map</a>
+						</li>
+					</ul>
+				</nav>
+			</div>
+		</div>
+
+	<form name="myForm" onsubmit="return validateform(formRef)">
+		<fieldset>
+			<legend>Personal Details</legend>
+			<label for="firstname">First Name:</label>
+			<input type="text" name="firstname" id="firstname" placeholder="eg: John"/>
+			&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+			<label for="lastname">Last Name:</label>
+			<input type="text" name="lastname" id="lastname" placeholder="eg: Smith"/>
+			<br><br>
+			<label for="email">Email Address:</label>
+			<input type="email" name="email" id="email"/>
+			&nbsp;&nbsp;&nbsp;
+			<label for="contactnum">Contact Number:</label>
+			<input type="tel" name="contactnum" id="contactnum" placeholder="07xxxxxxxx"/>
+			<br><br>
+		</fieldset>
+		<fieldset>
+            <legend>Merchandised Products</legend>
+            <div class="Products" id="div1">
+            	<img width = "200" height = "200" src="products-images/towel.png" alt="TOWEL">
+            	<label>Towel $30.50</label>
+            	<label>No. of items</label>
+            	<input type="Number" name="quantity" value="0" id="tquantity" min="0" >
+            	<input name="product" value="30.50" type="checkbox" id="towel" />
+            	<input type="button" value="add" name="btnadd" id="btntowel" onclick="totalIt()" />
+            </div>
+
+        	<div class="Products" id="div2">
+        		<img width = "200" height = "200" src="products-images/ravenmug.png" alt="MUG">
+            	<label>Mug $5.50</label>
+            	<label>No. of items</label>
+            	<input type="Number" name="quantity" value="0" id="mquantity" min="0">
+            	<input name="product" value="5.50" type="checkbox" id="mug" />
+            	<input type="button" value="add" name="btnadd" id="btnmug" onclick="totalIt()"/>
+            </div>
+            <br><br>
+            <div class="Products" id="div3">
+            	<img width = "200" height = "200" src="products-images/bathrobe.png" alt="BATHROBE">
+            	<label>BathRobe $75.50</label>
+            	<label>No. of items</label>
+            	<input type="Number" name="quantity" value="0" id="bquantity" min="0">
+            	<input name="product" value="75.50" type="checkbox" id="bathrobe" />
+            	<input type="button" value="add" name="btnadd" id="btnbathrobe" onclick="totalIt()"/>
+            </div>
+            <div class="Products" id="div4">
+            	<img width = "200" height = "200" src="products-images/monument.png" alt="MONUMENT">	
+            	<label>Monument $25.50</label>
+            	<label>No. of items</label>
+            	<input type="Number" name="quantity" value="0" id="nquantity" min="0">
+            	<input name="product" value="25.50" type="checkbox" id="monument"/>
+            	<input type="button" value="add" name="btnadd" id="btnmonument" onclick="totalIt()"/>
+            	
+            </div>
+            <br><br>
+            <div>	
+            	<label>Total</label> 
+            	<input value="$0.00" readonly="readonly" type="text" id="total"/>
+            	<input type="button" name="btnsubmit" id="submit" value="Place Order" onclick="validateForm(this.form)"/>
+            </div>	
+        </fieldset>
+	</form>
+	<footer>
+		<a href="pageeditor_gajeendran.html"> Page Editor </a>
+	</footer>
+</body>
+</html>

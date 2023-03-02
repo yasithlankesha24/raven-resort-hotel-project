@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+	<html lang="en">
+		<head>
+			<meta charset="UTF-8">
+			<meta http-equiv="X-UA-Compatible" content="IE=edge">
+			<meta name="viewport" content="width=device-width, initial-scale=1.0">			
+			<title>Gallery</title>
+			<link rel="stylesheet" href="gallery_style.css" />
+		</head>
+
+		<body>
+			<div class="nav-container">
+				<div class="wrapper">
+					<nav>
+						<div class="logo">
+							<a href="index.html">
+							<img src="Images/logo.svg" alt="Resort Logo">
+							</a>
+						</div>
+
+						<ul class="nav-items">
+							<li>
+								<a href="index.html">Home</a>
+							</li>
+
+							<li>
+								<a href="Form.html">Form</a>
+							</li>
+
+							<li>
+								<a href="BuyProducts.html">Buy Products</a>
+							</li>
+
+							<li>
+								<a href="Quiz.html">Quiz</a>
+							</li>
+
+							<li>
+								<a href="gallery.html">Gallery</a>
+							</li>
+
+							<li>
+								<a href="studentdetails.html">Student Details</a>
+							</li>
+							
+							<li>
+								<a href="svg.html">Site Map</a>
+							</li>							
+						</ul>
+					</nav>
+				</div>
+			</div>			
+					
+			<div class="colorChange">
+				<select onchange="changedBackgroundColor();"  id="colorMode">
+					<option>Choose a background color</option>
+					<option onclick="getRadioValue1();" value="1">White background and Black font</option>
+					<option onclick="getRadioValue2();" value="2">Black background and White font</option>
+				</select>
+			</div>
+
+			<div class="imageslider">
+
+				<div class="main_div">
+					<img src="images/hotel.jpg" id="main">
+
+				<div class="mySlides">
+					<h1>Hotel Overview</h1>
+						<p>Embellished with tha attractions beaches, think coconut groves, and spectacular oceanic panaromas from all its abdoes, Unawatuna Raven Resort is a premier amongst Unawatuna Hotels!</p>
+				</div>
+
+				<div class="mySlides">
+					<h1>Indoor Pool</h1>
+						<p>Our Hotel’s swimming pool has a perfect ventilation system, strict water quality control, and natural lighting that ensures a relaxing atmosphere.</p><br>
+						<p>Enjoy swimming at Raven Resort Hotel’s indoor pool regardless of the weather.</p>
+				</div>
+
+				<div class="mySlides">
+					<h1>Pub & Bar</h1>
+						<p>Enjoy a drink in our spacious lounge bar, is a truly enjoyable experience – the views of the natural harbour, no ships just a variety of birds and may be even spot a stray seal or penguin and then across the water with the opposite side comprising of natural terrain, with the names of ships picked out by natural stones will help to ensure that you will have a “relaxing drink”
+</p><br>
+						<p>There is a full range of bar drinks including a wide selection of spirits, Whisky, Brandy and Liqueurs, soft drinks and  beer including and Falkland Islands only real ale.  The wine list includes a variety and styles of wine including the famous Montes premium wine produced in Chile, with wines by the bottle and glass.</p>
+				</div>
+
+				<div class="mySlides">
+					<h1>Food & Beverage</h1>
+						<p>The food and beverage industry represents a huge sector of services within the hospitality industry that include preparing, presenting, and serving food and beverages to the customers on-premise (at restaurants and hotels) or off-premise (takeaway, restaurant catering service, and food delivery). </p>
+				</div>
+
+				<div class="mySlides">
+					<h1>Rooms</h1>
+						<p>All our guestrooms are elegantly furnished with handmade furniture include luxury en-suite facilities with complimentary amenities pack, flat screen LCD TV, tea/coffee making facilities, fan, hairdryer and the finest pure white linen and towels.</p>
+						<dl class="list">
+							<dt><b>King Size Four Poster</b></dt>
+								<dd>Our king size four poster provides views over landscaped gardens. It has a seating area, ample storage, digital safe and mini fridge.</dd><br>
+							
+							<dt><b>King Size Sleigh Bed</b></dt>
+								<dd>Our king size sleigh bedded also provides views over landscaped gardens. It has ample storage, a seating area, digital safe and mini fridge.</dd><br>
+							
+							<dt><b>Deluxe King Size</b></dt>
+								<dd>Our Deluxe king size room has a seating area, ample storage, digital safe and mini fridge. This room can also be configured with an extra roll-away bed for families of 3.</dd><br>
+							
+							<dt><b>Deluxe Twin/Large Double</b></dt>
+								<dd>Our Deluxe Twin/Large Double also provides views over landscaped gardens. It has a seating area, digital safe and mini fridge. This room can be configured with either 2 single beds or zip and linked to provide a large double bed.</dd><br>
+							
+							<dt><b>Compact Double</b></dt>
+								<dd>As our smallest budget rooms, the Compact bedrooms are suited for single occupancy or short-stay double occupancy as they have limited space and storage.</dd><br>						
+						</dl>
+				</div>
+			</div>
+
+			<div id="thumbnails">
+				<img src="Images/hotel.jpg" alt="Hotel Overview" class="dot" onclick="currentSlide(1)">
+				<img src="Images/indoor_pool.jpg" alt="Pool" class="dot" onclick="currentSlide(2)">
+				<img src="Images/pub.jpg" alt="Pub & Bar" class="dot" onclick="currentSlide(3)">
+				<img src="Images/food.jpg" alt="Foods" class="dot" onclick="currentSlide(4)">
+				<img src="Images/room.jpg" alt="Rooms" class="dot" onclick="currentSlide(5)">
+			</div>
+		</div>
+
+		<script src="gallery_script.js"></script>
+		
+		</body>
+
+		<footer>
+			<a href="pageeditor_yasith.html">Page Editor</a>
+		</footer>
+
+	</html>

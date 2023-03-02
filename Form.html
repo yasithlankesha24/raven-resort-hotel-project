@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Form</title>
+
+<link rel="stylesheet" href="form_style1.css">
+<link rel="stylesheet" href="form_style2.css">
+</head>
+<body>
+
+    <div class="nav-container">
+        <div class="wrapper">
+            <nav>
+                <div class="logo">
+                    <a href="index.html">
+                    <img src="Images/logo.svg" alt="Resort Logo">
+                    </a>
+                </div>
+
+                <ul class="nav-items">
+                    <li>
+                        <a href="index.html">Home</a>
+                    </li>
+
+                    <li>
+                        <a href="Form.html">Form</a>
+                    </li>
+
+                    <li>
+                        <a href="BuyProducts.html">Buy Products</a>
+                    </li>
+
+                    <li>
+                        <a href="Quiz.html">Quiz</a>
+                    </li>
+
+                    <li>
+                        <a href="gallery.html">Gallery</a>
+                    </li>
+
+                    <li>
+                        <a href="studentdetails.html">Student Details</a>
+                    </li>
+
+                    <li>
+                        <a href="svg.html">Site Map</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </div>
+
+    <div class="container" id="container">
+            <div class="header">
+                <h2>Query Form</h2>
+            </div>
+            <form action="mailto:lahiru.20210329@iit.ac.lk" class="form" id="form">
+                <div class="form-control">
+                    <label>First Name</label>
+                    <input type="text" placeholder="John" id="first">
+                </div>
+                <div class="form-control">
+                    <label>Last Name</label>
+                    <input type="text" placeholder="Doe" id="last">
+                </div>
+                <div class="form-control">
+                    <label>Email</label>
+                    <input type="text" placeholder="john@hello.com" id="email">
+                </div>
+                <div class="form-control">
+                    <label>Contact Number</label>
+                    <input type="text" placeholder="(+94) 7X XXX XXXX" id="contact">
+                </div>
+                <h3>Subject</h3>
+                    <div class="form-control">
+                        <select name="subject" id="subject">
+                            <option value="Delivery">Delivery</option>
+                            <option value ="Buy products">Buy Products</option>
+                            <option value= "Refunds and Returns">Refunds and Returns</option>
+                            <option value ="Other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-control">
+                        <label for="details">Details:</label>
+                        <textarea name="details" id="details" cols="40" rows="5" style="width: 378px; height: 99px;"></textarea>
+                    </div>
+                    <button type="button" class="button" onclick="validate();">View-Query</button>
+            </form>
+            </div> 
+
+            <script src="form_script.js"></script>
+       
+
+        <div id="demo">
+            <p id="demo1"></p>
+            <p id="demo2"></p>
+            <p id="demo3"></p>
+            <p id="demo4"></p>
+            <p id="demo5"></p>
+            <p id="demo6"></p>
+            <button onclick="document.location='Form.html'">Edit</button>
+            <button type="submit">Send</button>
+        </div>
+
+        <footer>
+            <a href="pageeditor_lahiru.html">Page Editor</a>
+        </footer>
+
+</body>
+</html>

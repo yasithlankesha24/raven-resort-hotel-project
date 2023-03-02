@@ -1,0 +1,42 @@
+*{
+    box-sizing: border-box;
+    margin: 0;
+}
+body{
+    font-family: "Roboto",sans-serif;
+}
+/*------------------Navigation ------------------*/
+
+
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 72px;
+}
+
+nav ul {
+    display: flex;
+}
+
+.nav-items li{
+    list-style: none;
+    margin-right: 59px;
+
+}
+ 
+.nav-items li a{
+    color: #021718;
+    font-size: 20px;
+    font-family: "Roboto",sans-serif;
+    text-decoration: none;
+}
+
+.Products{
+    display: inline;
+}
+
+footer{
+    border: solid;
+}
